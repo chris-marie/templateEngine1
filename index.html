@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    div {
+        margin: 20px;
+        background-color: lightcyan;
+    }
+    div[view] {
+    margin: 0 auto;
+    background-color: aqua;
+</style>
+
+    <script>
+
+        var x = 10;
+        console.log(window['x']); //associate array notation
+
+        // create the controllers
+        function controller1() {
+            controller1.scope = {};
+            controller1.scope.message = 'hello world';
+        }
+
+        function controller2() {
+            controller2.scope = {};
+            controller2.scope.message = 'hello world';
+        }
+
+        // run all controllers once so that their properties and methods are set
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // get all views
+            // get all elememts withing each view and search for templates
+            // replace templates with relevant data
+            //get all elements within the view (search for templates)
+            // write for loop for all the views - all elements in allviews nodelist
+            // write a recursive function for each view
+            // check textnodes - if they exist, run a match on the regular expression
+            // check for element - call the recursive function for each of them
+            var allview = document.querySelectorAll('div[view]'); // node list collection
+            console.log(allview[0].getAt);
+
+            regex = /\s*{{s*([0-9a-zA-Z]+)\s*}}\s*/gmi;  // if causes issue take out the global modifier
+            arrRegex = regex.exec('{{message}}');
+
+            for( i = 0, len = allview.length; i < len; i++) {
+                var curview = allview[i];
+                console.log('index = ' +allview[i]);
+                for(j =0 , jlen = curview.length; j < jlen; j++) {
+                    curchild = curview[j];
+                    console.log('j index: ' + j + ', ' + curchild);
+                }
+            }
+
+            for( i = 0, len = allview.length; i < len; i++) {
+                recurseViews(allview[i]);
+            }
+
+
+            function recurseViews(node) {
+                console.log('folllowing are the children for the view: ' + node.getAttribute('view'));
+                for( i = 0, len = node.childNodes.length; i < len; i++) {
+                    var childnode = node.childNodes[i];
+                    console.log('type: ' + childnode);
+                    if(filterForNodeText(childnode)) {
+                        // pick up text
+                        // check if matches the regex
+                        // replace childNode.nodeValue = controller1.textContent;
+                        console.log('text ' + i + ' = ' + childnode.nodeValue);
+                        childnode.nodevalue = findAndReplace(regex,childnode);
+
+                    } else {
+                        console.log('recurse child ' + i + ' element length = ' + childnode.length);
+                        recurseViews(childnode);
+                    }
+                    // nodeType 3 = text type
+                    // nodeType 1 = element type
+                }
+            }
+
+            function findAndReplace(node,regex) {
+                valueString = node.nodeValue;
+                if(regex.test(valueString)) {
+                    console.log('found a match here: ' + valueString);
+                    valueString = controller1.textContent;
+                } else {
+                    console.log('this does not match for {{ message }} ');
+                }
+                return valueString;
+
+            }
+
+            function filterForNodeText (n) {
+                ndtype = n.nodeType;
+                ndtype === 3;
+            }
+
+            console.log(arrRegex);
+            console.log(arrRegex[0]);
+
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+
+<div id="c1" view='controller1'>
+    <div> {{ message }} </div>
+</div>
+
+<div>
+    <div>
+        <div> {{ message }}
+        </div>
+    </div>
+</div>
+
+
+<!--<button id=btn_c1">Template</button>-->
+<div>
+    this div is nothing special    </div>
+<div id="c3" view="controller2">
+    <div> {{ message }} </div>
+</div>
+
+<script>
+    /*
+     look for attribute called veiw (getAttribute, .attributes
+     find function in beiw
+     pick up objects there
+     regex:
+     \d = didgit
+     \s+ = keep amtching white spaces
+     g = global
+     m = multiline
+     i = lower/upper case insensitive
+     's;kdshghadthis is a string'.match(/\d/, gmi);
+     .match(/\s * /gmi)
+     capture in groups .mathc <> .exec
+     vs
+     .contains & .startsWith()
+     window.addEventListener('load', function() {
+     document.getElementById('c1', controller1);
+     function controller1() {
+     controller1.scope = {};
+     controller1.scope.message = "hello world";
+     }
+     document.getElementById('btn_c1').addEventListener('click');
+     function changeController () {
+     console.log(document.querySelector('view'));
+     }
+     });
+     */
+</script>
+</body>
+</html>
