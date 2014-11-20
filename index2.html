@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            margin: 10px 20px 10px 20px;
+            background-color: lightcyan;
+        }
+
+        div[view] {
+            margin: 0 auto;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        // Nodes and Elements with Associate Array Notation
+
+        // Controller Functions
+
+        // Run all controllers once so that properties and methods are set
+               // what do they look like before this?
+
+        // Wait until DOM content is loaded to call controller functions
+
+        // Template String replacement or div manipulation
+
+        // get all the views
+        // get all elements within each view
+              // search for templates
+        // replace templates with relevant data set by each controller
+          // write for loop for all views - all elements in all views (nodelist)
+          // write a recursive function for each view
+              // check if text node or element node
+                  // if text -
+                      // pick up text
+                      // run match with regular expression
+                      // replace the child node's value with controller text
+                  // else - recurse function over element
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <div>
+        <div view="controller1">
+            {{message}}
+            <div>
+                <div> this div is not special
+                </div>
+                <div> the next one will be
+                </div>
+                <div>{{message}}
+                </div>
+            </div>
+        </div>
+        <div>heythere4friendsAAAALLLLthere2gether!!!!!
+        </div>
+    </div>
+
+    <div view="controller2">
+        {{name}}
+        <div>what!
+            <div> yeahYEAH, my cat is.....
+                <div>{{name}}
+                </div>
+                <div> yeaYEAH, my cat is....
+                    <div>AWESOME. yeahYEAH, my cat is........
+                        <div>{{name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>what?IknowTHISshouldBEaCHILDLESSnode!
+    </div>
+
+    <div>
+        <div view="controller3">
+            {{relation}}
+            <div>
+                {{relation}}
+                <div>
+                    {{relation}}
+                </div>
+                <div>
+                    {{relation}}
+                </div>
+                <div>
+                    {{relation}}
+                    <div>
+                        {{relation}}
+                        <div>
+                            {{relation}}
+                        </div>
+                        <div>
+                            {{relation}}
+                        </div>
+                        <div>
+                            {{relation}}
+                        </div>
+                        <div>
+                            {{relation}}
+                            <div>
+                                {{relation}}
+                            </div>
+                            <div>
+                                {{relation}}
+                                <div>
+                                    {{relation}}
+                                </div>
+                                <div>
+                                    {{relation}}
+                                    <div>
+                                        {{relation}}
+                                        <div>
+                                            {{relation}}
+                                            <div>
+                                                {{relation}}
+                                                <div>
+                                                    {{relation}}
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        {{relation}}
+                                                    </div>
+                                                    {{relation}}
+                                                </div>
+                                            </div>
+                                            <div>
+                                                {{relation}}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            {{relation}}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        {{relation}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            {{relation}}
+                        </div>
+                        <div>
+                            {{relation}}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {{relation}}
+                    <div>
+                        {{relation}}
+                    </div>
+                    <div>
+                        {{relation}}
+                    </div>
+                </div>
+            </div>
+            <div>
+                {{relation}}
+                <div>
+                    {{relation}}
+                </div>
+                <div>
+                    {{relation}}
+                </div>
+                <div>
+                    {{relation}}
+                </div>
+                <div>
+                    {{relation}}
+                    <div>
+                        {{relation}}
+                    </div>
+                </div>
+                <div>
+                    {{relation}}
+                </div>
+            </div>
+            <div>
+                {{relation}}
+            </div>
+        </div>
+    </div>
+
+ <div>
+    <div view="controller4">
+        {{combine}}
+        <div>I want to combine all the controllers!
+            <div>{{combine}
+            </div>
+            <div>one last one
+                <div>here
+                    <div>{{combine}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div>
+         This is not a controller
+     </div>
+</div>
+</body>
+</html>
