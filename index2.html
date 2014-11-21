@@ -16,28 +16,58 @@
     </style>
     <script>
         // Nodes and Elements with Associate Array Notation
+            // Controller Functions
+        function controller1() {
+            controller1.scope = {};
+            controller1.scope.message = 'hello world!' // what is the org idea behing scope?
+        }
 
-        // Controller Functions
+        function controller2() {
+            controller2.scope = {};
+            controller2.scope.message = 'RAJA';
+        }
 
-        // Run all controllers once so that properties and methods are set
-               // what do they look like before this?
+        function controller3() {
+            controller3.scope = {};
+            controller3.scope.message = 'change this message to print out the node address';
+        }
+        function controller4() {
+            controller4.scope = {};
+            controller4.scope.message = 'change this to get the message interactively';
+        }
+        // Run all controllers once so that properties and methods are set.
+        controller1(); controller2(); controller3(); controller4();
 
         // Wait until DOM content is loaded to call controller functions
 
         // Template String replacement or div manipulation
+/*
+   get all the views
+   get all elements within each view
+   search for templates
+        replace templates with relevant data set by each controller
+         write for loop for all views - all elements in all views (nodelist)
+         write a recursive function for each view
+             check if text node or element node
+                   if text -
+                    pick up text
+                      run match with regular expression
+                      replace the child node's value with controller text
+                  else - recurse function over element
 
-        // get all the views
-        // get all elements within each view
-              // search for templates
-        // replace templates with relevant data set by each controller
-          // write for loop for all views - all elements in all views (nodelist)
-          // write a recursive function for each view
-              // check if text node or element node
-                  // if text -
-                      // pick up text
-                      // run match with regular expression
-                      // replace the child node's value with controller text
-                  // else - recurse function over element
+   Want to use:
+   NODE: interface for DOM inheritance
+    Properties:
+      Node.childNodes, Node.firstChild, Node.lastChild, Node.nextSibling, Node.previousSibling,
+      Node.nodeName,Node.nodeType, Node.nodeValue, Node.parentNode, Node.parentElement,
+      Node.ownerDocument, Node.textContent
+    Attributes:
+      Node.removeChild, Node.appendChild, Node.cloneNode, Node.contains, Node.hasChildNodes,
+      Node.insertBefore, Node.compareDocumentPosition, Node.isEqualNode, Node.isDefaultNamespace,
+      Node.replaceChild, Node.normalize, Node.lookupNamespaceURI, Node.lookupPrefix
+   ELEMENTS:
+*/
+
 
 
 
